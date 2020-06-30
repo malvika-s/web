@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="s.css">
+</head>
+<body>
+<style>
+body {
+  background-image: url('foods.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+<h1>WELCOME!!</h1>
+
+<p id="demo">This is a form for the total food items taken.This shows the the total food items ordered.<br>
+ Food Order Form allows customers to select their meal .They need to fill up their details first.<br>
+At the end the customer will be shown the total items ordered.
+</p>
+
+<form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" onblur="myFunction()"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" onblur="myFunction1()"><br>
+  <label for="phoneno">Phone Number:</label><br>
+  <input type="number" id="phoneno" name="phoneno" ><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" ><br>
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email" ><br><br>
+  
+  <div>
+  <label for="gender">Gender: </label><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female">Female</label><br>
+  <input type="radio" id="other" name="gender" value="other">
+  <label for="other">Other</label><br><br>
+  </div>
+  
+  <label for="FOOD">FOOD ITEM: </label><br>
+  <input type="checkbox" id="food1" name="food" value="burger">
+  <label for="food1"> BURGER</label><br>
+  <input type="checkbox" id="food2" name="food" value="pizza">
+  <label for="vehicle2"> PIZZA</label><br>
+  <input type="checkbox" id="food3" name="food" value="pasta">
+  <label for="vehicle3"> PASTA</label><br>
+  <input type="checkbox" id="food4" name="food" value="nachos">
+  <label for="vehicle3"> NACHOS</label><br>
+  <input type="checkbox" id="food5" name="food" value="Wrap">
+  <label for="vehicle3"> WRAPS</label><br><br>
+  <input type="button" onclick='printChecked()' value="SUBMIT"/>
+</form>
+<script type="text/javascript">
+	function printChecked(){
+		var items=document.getElementsByName('food');
+		var selectedItems="";
+		for(var i=0; i<items.length; i++){
+			if(items[i].type=='checkbox' && items[i].checked==true)
+				selectedItems+=items[i].value+"\n";
+		}
+		alert(selectedItems);
+	}			
+</script>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+function myFunction1() {
+  var x = document.getElementById("lname");
+  x.value = x.value.toUpperCase();
+}
+
+</script>
+
+
+</body>
+</html>
